@@ -1,4 +1,4 @@
-version = "0.1.0"
+version = "0.1.1"
 group = "com.ragegamingpe.varietyotextures" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 
 ext.priv = parseConfig(file("private.properties"))
@@ -15,7 +15,7 @@ githubRelease {
     }
 }
 
-tasks.curseforge.dependsOn "githubRelease"
+tasks.curseforge.dependsOn "build"
 
 curseforge {
     apiKey = "${priv.curseforgeApi}"
@@ -23,9 +23,6 @@ curseforge {
         id = '319339'
         changelog = "See https://github.com/dominiccarrington/VarietyO-Textures/releases/tag/v${project.version}"
         releaseType = "release"
-    }
-    options {
-        forgeGradleIntegration = false
     }
 }
 
