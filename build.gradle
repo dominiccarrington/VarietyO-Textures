@@ -1,0 +1,38 @@
+version = "0.1.0"
+group = "com.ragegamingpe.varietyotextures" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+
+ext.priv = parseConfig(file("private.properties"))
+
+tasks.githubRelease.dependsOn "build"
+
+githubRelease {
+    owner 'dominiccarrington'
+    repo 'VarietyO-Textures'
+    token "${priv.githubToken}"
+    releaseAssets {
+        FilenameFilter filter = { dir, filename -> filename.contains(project.version) }
+        releaseAssets = jar.destinationDir.listFiles filter
+    }
+}
+
+tasks.curseforge.dependsOn "githubRelease"
+
+//curseforge {
+//    apiKey = "${priv.curseforgeApi}"
+//    project {
+//        id = '319298'
+//        changelog = "See https://github.com/dominiccarrington/VarietyO-Textures/releases/tag/v${project.version}"
+//        releaseType = "release"
+//    }
+//    options {
+//        forgeGradleIntegration = false
+//    }
+//}
+
+def parseConfig(File config) {
+    config.withReader {
+        def prop = new Properties()
+        prop.load(it)
+        return (new ConfigSlurper().parse(prop))
+    }
+}

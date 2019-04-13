@@ -1,0 +1,16 @@
+[
+{
+  "modid": "varietyotextures",
+  "name": "Variety O' Textures",
+  "description": "Adds a variety of textures for Minecraft entities",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["RageGamingPE"],
+  "credits": "GingerMikie for the wolf textures",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
