@@ -62,7 +62,7 @@ public class VarietyOTextures
     {
         List<ResourceLocation> textures = new ArrayList<>();
 
-        for (int i = 0; i <= count; i++)
+        for (int i = 1; i <= count; i++)
             textures.add(new ResourceLocation(MOD_ID, "textures/entity/" + rl + "/" + i + ".png"));
 
         if (vanilla != null) textures.add(vanilla);
