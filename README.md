@@ -1,5 +1,4 @@
-# ShulkerInvent
-Ever wanted to open an shulker box in your inventory? Yes? Well now you can!
+# Variety O' Textures
 
 ## Found a Bug?
 Thanks for finding it, create an issue! Before creating the issue make sure you are on the most recent version of the mod. In order to make sure that I can fix it please include the following information:
