@@ -19,22 +19,21 @@ package com.ragegamingpe.varietyotextures.render;
 
 import com.ragegamingpe.varietyotextures.VarietyOTextures;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.passive.EntityWolf;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderWolf extends net.minecraft.client.renderer.entity.RenderWolf
+public class RenderOcelot extends net.minecraft.client.renderer.entity.RenderOcelot
 {
-    public RenderWolf(RenderManager manager)
+    public RenderOcelot(RenderManager manager)
     {
         super(manager);
     }
 
     @Override
-    protected ResourceLocation getEntityTexture(EntityWolf entity)
+    protected ResourceLocation getEntityTexture(EntityOcelot entity)
     {
-        if (entity.isTamed()) {
-            return VarietyOTextures.getRandomTexture(entity, VarietyOTextures.Type.WOLF_TAMED);
-        }
+        if (entity.isTamed())
+            return VarietyOTextures.getRandomTexture(entity, VarietyOTextures.Type.OCELOT_TAMED);
         return super.getEntityTexture(entity);
     }
 }

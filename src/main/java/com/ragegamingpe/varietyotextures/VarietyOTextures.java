@@ -17,8 +17,10 @@
 
 package com.ragegamingpe.varietyotextures;
 
+import com.ragegamingpe.varietyotextures.render.RenderOcelot;
 import com.ragegamingpe.varietyotextures.render.RenderWolf;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -43,14 +45,18 @@ public class VarietyOTextures
     private static final Map<Type, List<ResourceLocation>> TEXTURES = new HashMap<>();
 
     private static final int WOLF_TAMED_COUNT = 6;
+    private static final int OCELOT_TAMED_COUNT = 11;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+
         TEXTURES.put(Type.WOLF_TAMED, getTextures("wolf/tamed", WOLF_TAMED_COUNT, new ResourceLocation("textures/entity/wolf/wolf_tame.png")));
+        TEXTURES.put(Type.OCELOT_TAMED, getTextures("ocelot/tamed", OCELOT_TAMED_COUNT));
 
         RenderingRegistry.registerEntityRenderingHandler(EntityWolf.class, RenderWolf::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityOcelot.class, RenderOcelot::new);
     }
 
     private List<ResourceLocation> getTextures(String rl, int count)
@@ -82,6 +88,7 @@ public class VarietyOTextures
 
     public enum Type
     {
-        WOLF_TAMED
+        WOLF_TAMED,
+        OCELOT_TAMED
     }
 }
