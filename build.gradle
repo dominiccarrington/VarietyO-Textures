@@ -17,17 +17,17 @@ githubRelease {
 
 tasks.curseforge.dependsOn "githubRelease"
 
-//curseforge {
-//    apiKey = "${priv.curseforgeApi}"
-//    project {
-//        id = '319298'
-//        changelog = "See https://github.com/dominiccarrington/VarietyO-Textures/releases/tag/v${project.version}"
-//        releaseType = "release"
-//    }
-//    options {
-//        forgeGradleIntegration = false
-//    }
-//}
+curseforge {
+    apiKey = "${priv.curseforgeApi}"
+    project {
+        id = '319339'
+        changelog = "See https://github.com/dominiccarrington/VarietyO-Textures/releases/tag/v${project.version}"
+        releaseType = "release"
+    }
+    options {
+        forgeGradleIntegration = false
+    }
+}
 
 def parseConfig(File config) {
     config.withReader {
